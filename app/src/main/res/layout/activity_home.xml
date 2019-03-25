@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+ <Button
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content" android:id="@+id/logout"
+     android:text="Logout"
+     />
+    <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/logout"
+      android:layout_marginTop="15dp"
+      android:gravity="center"
+      android:id="@+id/linear1"
+      >
+   <ImageView
+       android:id="@+id/object1"
+       android:src="@drawable/chair1"
+       android:layout_width="150dp"
+       android:layout_height="150dp"
+       android:layout_marginRight="25dp"
+       android:layout_marginLeft="5dp"
+       android:layout_marginTop="5dp"
+       android:layout_marginBottom="5dp"/>
+
+   <ImageView
+       android:id="@+id/object2"
+       android:src="@drawable/chair2"
+       android:layout_width="150dp"
+       android:layout_height="150dp"
+       android:layout_marginRight="5dp"
+       android:layout_marginLeft="25dp"
+       android:layout_marginTop="5dp"
+       android:layout_marginBottom="5dp"
+       />
+
+
+  </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear1"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:id="@+id/linear2"
+        >
+        <ImageView
+            android:id="@+id/object3"
+            android:src="@drawable/chair3"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+
+        <ImageView
+            android:id="@+id/object4"
+            android:src="@drawable/chair4"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear2"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        >
+        <ImageView
+            android:id="@+id/object5"
+            android:src="@drawable/babysitter"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+
+        <ImageView
+            android:id="@+id/object6"
+            android:src="@drawable/table2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            />
+
+    </LinearLayout>
+</RelativeLayout>
