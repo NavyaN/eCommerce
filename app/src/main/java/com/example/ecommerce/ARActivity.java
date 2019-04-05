@@ -34,30 +34,26 @@ public class ARActivity extends AppCompatActivity implements View.OnClickListene
     Anchor anchor;
     private boolean isPlaced = false;
     private String anchorId;
-   // ImageView object;
+    // ImageView object;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ar);
         arFragment=(ArFragment)getSupportFragmentManager().findFragmentById(R.id.sceneform_ux_fragment);
-      //  String value = "object1";
-       // object = (ImageView)findViewById(R.id.object1);
-        arFragment.setOnTapArPlaneListener(new BaseArFragment.OnTapArPlaneListener() {
-            @Override
-            public void onTapPlane(HitResult hitResult, Plane plane, MotionEvent motionEvent) {
-
-                if(!isPlaced){
-                    anchor =  arFragment.getArSceneView().getSession().hostCloudAnchor(hitResult.createAnchor());
-                    appAnchorState = AppAnchorState.HOSTING;
-                    setUpModel();
-                    AnchorNode anchorNode = new AnchorNode(anchor);
-                    anchorNode.setParent(arFragment.getArSceneView().getScene());
-                    createModel(anchorNode);
-                    isPlaced = true;
-                }
-            }
-        });
+        //  String value = "object1";
+        // object = (ImageView)findViewById(R.id.object1);
+        if(!isPlaced){
+            setUpModel();
+            arFragment.setOnTapArPlaneListener((HitResult hitResult, Plane plane, MotionEvent motionEvent) -> {
+                anchor =  hitResult.createAnchor();
+                AnchorNode anchorNode = new AnchorNode(anchor);
+                anchorNode.setParent(arFragment.getArSceneView().getScene());
+                createModel(anchorNode);
+            });
+            isPlaced = true;
+        }
+        /*
         arFragment.getArSceneView().getScene().addOnUpdateListener(frameTime -> {
             if( appAnchorState != appAnchorState.HOSTING){
                 return;
@@ -77,11 +73,12 @@ public class ARActivity extends AppCompatActivity implements View.OnClickListene
             anchorNode.setParent(arFragment.getArSceneView().getScene());
             createModel(anchorNode);
         });
+        */
     }
 
     private void setUpModel() {
         ModelRenderable.builder()
-                .setSource(this,R.raw.chair)
+                .setSource(this,Uri.parse("chair1.sfb"))
                 .build()
                 .thenAccept( renderable -> ObjectRenderable =renderable)
                 .exceptionally(throwable -> {
@@ -91,10 +88,11 @@ public class ARActivity extends AppCompatActivity implements View.OnClickListene
     }
 
     private void createModel(AnchorNode anchorNode) {
-            TransformableNode Object = new TransformableNode(arFragment.getTransformationSystem());
-            Object.setParent(anchorNode);
-            Object.setRenderable(ObjectRenderable);
-            Object.select();
+        TransformableNode Object = new TransformableNode(arFragment.getTransformationSystem());
+        Object.setParent(anchorNode);
+        Object.setRenderable(ObjectRenderable);
+        Object.setLocalPosition(new Vector3(0.0f,0.0f,0.0f));
+        Object.select();
     }
 
 
