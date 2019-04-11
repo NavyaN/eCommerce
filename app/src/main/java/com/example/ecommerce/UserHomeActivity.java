@@ -55,7 +55,7 @@ public class UserHomeActivity extends AppCompatActivity
         ImageView img =(ImageView) findViewById(R.id.object1);
         img.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(UserHomeActivity.this, CloudAnchors.class);
+                Intent intent = new Intent(UserHomeActivity.this, ARActivity.class);
                 startActivity(intent);
             }
         });
