@@ -48,69 +48,29 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.ar.sceneform.plugin'
 
 
-sceneform.asset('SampleData/chair.FBX',
-        'default',
-        'SampleData/chair.sfa',
-        'src/main/res/raw/chair')
 
 
-sceneform.asset('SampleData/table2.fbx',
+sceneform.asset('SampleData/Heart.obj',
         'default',
-        'SampleData/table2.sfa',
-        'src/main/assets/table2')
-
-sceneform.asset('SampleData/chair2.fbx',
-        'default',
-        'SampleData/chair2.sfa',
-        'src/main/assets/chair2')
+        'SampleData/Heart.sfa',
+        'src/main/assets/Heart')
 
 sceneform.asset('SampleData/chair1.FBX',
         'default',
         'SampleData/chair1.sfa',
         'src/main/assets/chair1')
 
-sceneform.asset('SampleData/babysitter.obj',
+sceneform.asset('SampleData/chair2.fbx',
         'default',
-        'SampleData/babysitter.sfa',
-        'src/main/assets/babysitter')
-
-sceneform.asset('SampleData/chair4.FBX',
-        'default',
-        'SampleData/chair4.sfa',
-        'src/main/assets/chair4')
+        'SampleData/chair2.sfa',
+        'src/main/assets/chair2')
 
 sceneform.asset('SampleData/chair3.fbx',
         'default',
         'SampleData/chair3.sfa',
         'src/main/assets/chair3')
 
-
-sceneform.asset('SampleData/babysitter.obj',
-        'default',
-        'SampleData/babysitter.sfa',
-        'src/main/res/raw/babysitter')
-
-sceneform.asset('SampleData/chair1.FBX',
-        'default',
-        'SampleData/chair1.sfa',
-        'src/main/res/raw/chair1')
-
-sceneform.asset('SampleData/chair2.fbx',
-        'default',
-        'SampleData/chair2.sfa',
-        'src/main/res/raw/chair2')
-
-sceneform.asset('SampleData/chair3.fbx',
-        'default',
-        'SampleData/chair3.sfa',
-        'src/main/res/raw/chair3')
-
-sceneform.asset('SampleData/chair4.FBX',
-        'default',
-        'SampleData/chair4.sfa',
-        'src/main/res/raw/chair4')
-
 sceneform.asset('SampleData/table2.fbx',
         'default',
         'SampleData/table2.sfa',
-        'src/main/res/raw/table2')
+        'src/main/assets/table2')

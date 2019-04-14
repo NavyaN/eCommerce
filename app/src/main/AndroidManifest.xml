@@ -5,10 +5,12 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <!--
- Indicates that app requires ARCore ("AR Required"). Ensures app is only
-         visible in the Google Play Store on devices that support ARCore.
+ This tag indicates that this application requires ARCore.  This results in the application
+         only being visible in the Google Play Store on devices that support ARCore.
     -->
-    <uses-feature android:name="android.hardware.camera.ar" />
+    <uses-feature
+        android:name="android.hardware.camera.ar"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -30,7 +32,7 @@
             android:value="required" />
         <meta-data
             android:name="com.google.android.ar.API_KEY"
-            android:value="AIzaSyDIfni01PgwORBn6OC3RS7Q5HWPDZMxDpM" />
+            android:value="AIzaSyDnl-RnGBI-az5pOeVtAHJR5I4Tlkvc0Is" />
 
         <activity android:name=".ARActivity" />
         <activity android:name=".RegisterActivity" />

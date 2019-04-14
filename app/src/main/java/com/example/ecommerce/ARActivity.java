@@ -40,7 +40,6 @@ public class ARActivity extends AppCompatActivity {
     private AppAnchorState appAnchorState = AppAnchorState.NONE;
     private SnackbarHelper snackbarHelper = new SnackbarHelper();
     private StorageManager storageManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,7 +92,7 @@ public class ARActivity extends AppCompatActivity {
 
         Anchor resolvedAnchor = arFragment.getArSceneView().getSession().resolveCloudAnchor(cloudAnchorId);
         setCloudAnchor(resolvedAnchor);
-        placeObject(arFragment, cloudAnchor, Uri.parse("Heart.sfb"));
+        placeObject(arFragment, cloudAnchor, Uri.parse("chair1.sfb"));
         snackbarHelper.showMessage(this, "Now resolving anchor..");
         appAnchorState = AppAnchorState.RESOLVING;
     }
@@ -164,4 +163,5 @@ public class ARActivity extends AppCompatActivity {
         node.setLocalPosition(new Vector3(0.0f,0.0f,0.0f));
         node.select();
     }
+
 }
