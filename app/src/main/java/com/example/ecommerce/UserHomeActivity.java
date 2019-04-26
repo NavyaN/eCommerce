@@ -52,10 +52,51 @@ public class UserHomeActivity extends AppCompatActivity
         TextView userNameTextView = headerView.findViewById(R.id.userProfileName);
         CircleImageView profileImageView = headerView.findViewById(R.id.profile_image);
         userNameTextView.setText(CurrentUser.name);
-        ImageView img =(ImageView) findViewById(R.id.object1);
+        ImageView img =(ImageView) findViewById(R.id.chair1);
         img.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(UserHomeActivity.this, ARActivity.class);
+                intent.putExtra("ImageName","chair1");
+                startActivity(intent);
+            }
+        });
+        ImageView img1 =(ImageView) findViewById(R.id.chair2);
+        img1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(UserHomeActivity.this, ARActivity.class);
+                intent.putExtra("ImageName","chair2");
+                startActivity(intent);
+            }
+        });
+        ImageView img2 =(ImageView) findViewById(R.id.chair3);
+        img2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(UserHomeActivity.this, ARActivity.class);
+                intent.putExtra("ImageName","chair3");
+                startActivity(intent);
+            }
+        });
+        ImageView img3 =(ImageView) findViewById(R.id.chair4);
+        img3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(UserHomeActivity.this, ARActivity.class);
+                intent.putExtra("ImageName","chair4");
+                startActivity(intent);
+            }
+        });
+        ImageView img4 =(ImageView) findViewById(R.id.babysitter);
+        img4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(UserHomeActivity.this, ARActivity.class);
+                intent.putExtra("ImageName","babysitter");
+                startActivity(intent);
+            }
+        });
+        ImageView img5 =(ImageView) findViewById(R.id.table2);
+        img5.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(UserHomeActivity.this, ARActivity.class);
+                intent.putExtra("ImageName","table2");
                 startActivity(intent);
             }
         });

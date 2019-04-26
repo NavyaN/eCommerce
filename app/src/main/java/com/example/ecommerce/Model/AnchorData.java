@@ -20,7 +20,18 @@ public class AnchorData {
         this.shortCode = shortCode;
     }
 
-    private String cloudAnchorId, shortCode;
+    private String cloudAnchorId;
+    private String shortCode;
+
+    public String getObjectPlaced() {
+        return objectPlaced;
+    }
+
+    public void setObjectPlaced(String objectPlaced) {
+        this.objectPlaced = objectPlaced;
+    }
+
+    private String objectPlaced;
 
     public CloudAnchorFragment getArFragment() {
         return arFragment;
@@ -41,6 +52,5 @@ public class AnchorData {
         this.shortCode = shortCode;
 
     }
-
 
 }

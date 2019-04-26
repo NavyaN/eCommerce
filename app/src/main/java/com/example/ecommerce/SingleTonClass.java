@@ -24,6 +24,16 @@ public class SingleTonClass  extends Application {
 
     List<AnchorData> allAnchorsData = new ArrayList<AnchorData>();
 
+    public String getPlacedObject() {
+        return placedObject;
+    }
+
+    public void setPlacedObject(String placedObject) {
+        this.placedObject = placedObject;
+    }
+
+    String placedObject;
+
    // public AllAnchorsData allAnchorsData;
 
     public void setArFragment(CloudAnchorFragment arFragment) {

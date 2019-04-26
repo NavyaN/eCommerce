@@ -21,7 +21,7 @@
         >
 
         <ImageView
-                android:id="@+id/object1"
+                android:id="@+id/chair1"
                 android:src="@drawable/chair1"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -31,7 +31,7 @@
                 android:layout_marginBottom="5dp"/>
 
         <ImageView
-            android:id="@+id/object2"
+            android:id="@+id/chair2"
             android:src="@drawable/chair2"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -53,7 +53,7 @@
         android:id="@+id/linear2"
         >
         <ImageView
-            android:id="@+id/object3"
+            android:id="@+id/chair3"
             android:src="@drawable/chair3"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -63,7 +63,7 @@
             android:layout_marginBottom="5dp"/>
 
         <ImageView
-            android:id="@+id/object4"
+            android:id="@+id/chair4"
             android:src="@drawable/chair4"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -83,7 +83,7 @@
         android:gravity="center"
         >
         <ImageView
-            android:id="@+id/object5"
+            android:id="@+id/babysitter"
             android:src="@drawable/babysitter"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -93,7 +93,7 @@
             android:layout_marginBottom="5dp"/>
 
         <ImageView
-            android:id="@+id/object6"
+            android:id="@+id/table2"
             android:src="@drawable/table2"
             android:layout_width="150dp"
             android:layout_height="150dp"

@@ -49,6 +49,8 @@ public class ARActivity extends AppCompatActivity {
     private SnackbarHelper snackbarHelper = new SnackbarHelper();
     private FireBaseAnchor storageManager;
     private SingleTonClass singleton;
+    Bundle bundle;
+    String value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +59,10 @@ public class ARActivity extends AppCompatActivity {
         storageManager = new FireBaseAnchor(ARActivity.this);
         arFragment = (CloudAnchorFragment) getSupportFragmentManager().findFragmentById(R.id.sceneform_fragment);
         //to add
-         singleton =  (SingleTonClass) getApplicationContext();
+        bundle = getIntent().getExtras();
+        String value1 = bundle.getString("ImageName");
+        value = value1;
+        singleton =  (SingleTonClass) getApplicationContext();
         arFragment.getPlaneDiscoveryController().hide();
         arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdateFrame);
 
@@ -116,7 +121,7 @@ public class ARActivity extends AppCompatActivity {
                     setCloudAnchor(newanchor);
                     appAnchorState = AppAnchorState.HOSTING;
                     snackbarHelper.showMessage(this, "Now hosting anchor..");
-                    placeObject(arFragment, cloudAnchor, Uri.parse("chair1.sfb"));
+                    placeObject(arFragment, cloudAnchor, Uri.parse(value+".sfb"));
                 });
         storageManager.getAllCloudAnchorsData();
        //AllAnchorsData allAnchorsData = singleton.allAnchorsData;
@@ -133,12 +138,13 @@ public class ARActivity extends AppCompatActivity {
         for (AnchorData c : allAnchorsData) {
             if (c.getShortCode().equals(String.valueOf(shortcode))) {
                 cloudAnchorId = c.getCloudAnchorId();
+                singleton.setPlacedObject(c.getObjectPlaced());
             }
         }
         //String cloudAnchorId = storageManager.getCloudAchorID(this, String.valueOf(shortcode), arFragment.getArSceneView().getSession());
         Anchor resolvedAnchor = arFragment.getArSceneView().getSession().resolveCloudAnchor(cloudAnchorId);
         setCloudAnchor(resolvedAnchor);
-        placeObject(arFragment, cloudAnchor, Uri.parse("chair1.sfb"));
+        placeObject(arFragment, cloudAnchor, Uri.parse(singleton.placedObject+".sfb"));
         snackbarHelper.showMessage(this, "Now resolving anchor..");
         appAnchorState = AppAnchorState.RESOLVING;
     }
@@ -178,7 +184,7 @@ public class ARActivity extends AppCompatActivity {
                 appAnchorState = AppAnchorState.NONE;
             } else if (cloudAnchorState == Anchor.CloudAnchorState.SUCCESS) {
                 int shortcode = storageManager.nextShortCode(this);//Add this line
-                storageManager.storeUsingShortCode(this, String.valueOf(shortcode), cloudAnchor.getCloudAnchorId(), arFragment);
+                storageManager.storeUsingShortCode(this, String.valueOf(shortcode), cloudAnchor.getCloudAnchorId(), value);
                 snackbarHelper.showMessageDismiss(this, "Anchor hosted Sucessfully!cloudshortcode" + shortcode);//change
                 appAnchorState = AppAnchorState.HOSTED;
             }

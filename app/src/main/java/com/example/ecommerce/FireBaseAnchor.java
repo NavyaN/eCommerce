@@ -55,7 +55,7 @@ public class FireBaseAnchor  {
         return random;
     }
     /**Stores the cloud anchor ID in the activity's SharedPreference.*/
-    void storeUsingShortCode(Activity activity,String shortcode,String cloudAnchorId, CloudAnchorFragment arFragment){
+    void storeUsingShortCode(Activity activity,String shortcode,String cloudAnchorId, String value){
         final DatabaseReference databaseReference;
         databaseReference = FirebaseDatabase.getInstance().getReference();
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -66,7 +66,7 @@ public class FireBaseAnchor  {
                     HashMap<String, Object> userDataMap = new HashMap<>();
                     userDataMap.put("shortCode",shortcode);
                     userDataMap.put("cloudAnchorId", cloudAnchorId);
-                   // userDataMap.put("arFragment", arFragment);
+                    userDataMap.put("objectPlaced", value);
                     databaseReference.child("CloudAnchorData").child(shortcode).updateChildren(userDataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -80,7 +80,7 @@ public class FireBaseAnchor  {
                         HashMap<String, Object> userDataMap = new HashMap<>();
                         userDataMap.put("shortCode",newshortcode);
                         userDataMap.put("cloudAnchorId", cloudAnchorId);
-                       // userDataMap.put("arFragment", arFragment);
+                        userDataMap.put("objectPlaced", value);
                         databaseReference.child("CloudAnchorData").child(newshortcode).updateChildren(userDataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
@@ -104,7 +104,6 @@ public class FireBaseAnchor  {
      * was not stored for this short code
      */
     String getCloudAchorID(Activity activity,String shortCode, Session session){
-
         getValueFromDataBase(shortCode);
         return anchorId;
     }
