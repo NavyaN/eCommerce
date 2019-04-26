@@ -4,10 +4,15 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class StorageManager {
+import com.google.ar.core.Session;
+
+import java.io.Serializable;
+
+public class StorageManager implements Serializable {
     private static final String NEXT_SHORT_CODE ="next_short_code";
     private static final String KEY_PREFIX ="anchor;";
     private static final int INITIAL_SHORT_CODE=142;
+    private Session session;
 
     /**Gets a new short code that can be used to store the anchorID.*/
     int nextShortCode(Activity activity){
@@ -32,5 +37,13 @@ public class StorageManager {
         SharedPreferences sharedPreferences=activity.getPreferences(Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_PREFIX+shortCode,"");
     }
+
+    void setSession(Session session){
+         this.session = session;
+    }
+    Session getSession(){
+        return session;
+    }
+
 }
 
