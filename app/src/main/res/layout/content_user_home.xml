@@ -8,9 +8,6 @@
     tools:context=".UserHomeActivity"
     tools:showIn="@layout/app_bar_user_home">
 
- <!--   <android.support.v7.widget.RecyclerView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView> -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -47,8 +44,37 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/linear1"
-        android:layout_marginTop="15dp"
+        android:id="@+id/linear-cost1"
+        >
+
+        <TextView
+            android:id="@+id/text1"
+            android:text="Price: $35"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="70dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:id="@+id/txt2"
+            android:text="Price: $40"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="100dp"
+            android:textColor="@color/colorPrimaryDark"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear-cost1"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:id="@+id/linear2"
         >
@@ -78,7 +104,37 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/linear2"
+        android:id="@+id/linear-cost2"
+        >
+
+        <TextView
+            android:id="@+id/text3"
+            android:text="Price: $55"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="70dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:id="@+id/txt4"
+            android:text="Price: $60"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="100dp"
+            android:textColor="@color/colorPrimaryDark"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear-cost2"
+        android:id="@+id/linear3"
         android:layout_marginTop="15dp"
         android:gravity="center"
         >
@@ -101,6 +157,35 @@
             android:layout_marginLeft="25dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/linear3"
+        android:id="@+id/linear-cost3"
+        >
+
+        <TextView
+            android:id="@+id/text5"
+            android:text="Price: $65"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="70dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:id="@+id/txt6"
+            android:text="Price: $70"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="100dp"
+            android:textColor="@color/colorPrimaryDark"
             />
 
     </LinearLayout>
